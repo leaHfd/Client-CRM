@@ -1,0 +1,29 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+    <p-panel [header]="'Login' | translate">
+        <div>
+            <div>
+                <div>
+                    {{ 'LOGIN.USER_NAME' | translate }}:
+                </div>
+                <div>
+                    <input pInputText type="text" formControlName="userName" class="form-control" name="login">
+                </div>
+            </div>
+            <div>
+                <div>
+                    {{ 'LOGIN.PASSWORD' | translate }}:
+                </div>
+                <div>
+                    <input  type="password" pPassword  [feedback]="false" formControlName="password" name="password">
+                </div>
+            </div>
+            <div>
+                <div class="m-4">
+                    <button pButton type="submit" label="{{'LOGIN.SUBMIT' | translate}}" [disabled]="!loginForm.valid"></button>
+                </div>
+                
+            </div>
+        </div>
+    </p-panel>
+</form>
+

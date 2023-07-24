@@ -1,0 +1,30 @@
+<free-search [(freeSearchText)]="freeSearchText"></free-search>
+<p-galleria *ngIf="images?.length" [value]="images" [(visible)]="displayCustom" [(activeIndex)]="activeIndex" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '850px'}" [numVisible]="7"
+    [circular]="true" [fullScreen]="true" [showItemNavigators]="true" [showThumbnails]="false" [baseZIndex]="100000">
+    <ng-template pTemplate="item" let-item>
+        <div style="width: 60%;">
+            <img [src]="item.url"  style="width: 100%; display: block;"/>
+            <span style="width: 100%; display: block;">{{item.insertDate}} kkk</span>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="thumbnail" let-item>
+        <div class="grid p-nogutter p-justify-center">
+            <img [src]="item.thumbnailImageSrc" style="display: block;"/>
+        </div>
+    </ng-template>
+</p-galleria>
+<div *ngIf="images" class="grid">
+    <div *ngFor="let image of images; let index = index;" class="col-3" key="index">
+        <img [src]="image.url" width="200px" height="300px" style="cursor: pointer" (click)="imageClick(index)"/>
+        <span *ngIf="mobileId" style="width: 75%; display: flex; text-align: justify;">תאריך צילום: {{image.insertDate | date: 'dd/MM/yyyy hh:mm' }}</span>
+        <span *ngIf="!mobileId" style="width: 75%; display: flex; text-align: justify;">תאריך צילום: {{ image.insertDate | date: 'dd/MM/yyyy hh:mm' }} שם משתמש: {{image.userName}} שם בית כנסת: {{image.mobileName}}</span>
+    </div>
+</div>
+<div *ngIf="!images; else noImages">
+    בטעינה...
+</div>
+<ng-template #noImages>
+    <div *ngIf="!images.length">
+        לחיפוש זה לא קיימות תמונות
+    </div>
+</ng-template>

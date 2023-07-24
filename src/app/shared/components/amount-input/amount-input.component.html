@@ -1,0 +1,23 @@
+<div>
+    <div class="input" [ngClass]="inputMode==inputModeType.Editing? 'shown':'hidden'">
+        <input type="number" autofocus autocomplete="off" [(ngModel)]="amount" class="amount"
+            [required]="required?.value" name="amount" step="0.01" pattern="[0-9]+([\.,])?" #amountInput="ngModel"
+            [max]="maxAmount?.value" [min]="minAmount?.value" (blur)="onlyReading()"
+            [placeholder]="'TRANSACTION.CHOOSE_AMOUNT' | translate" />
+        ₪
+    </div>
+    <div class="input" [ngClass]="inputMode==inputModeType.Reading? 'shown':'hidden'">
+        <input (mousedown)="editing()" type="text" [(ngModel)]="amountText" class="amount"
+            [placeholder]="'TRANSACTION.CHOOSE_AMOUNT' | translate" />
+        ₪
+    </div>
+    <div class="invalid-feedback" *ngIf="amountInput?.errors['max']">
+        {{maxAmount?.error}}
+    </div>
+    <div class="invalid-feedback" *ngIf="amountInput?.errors['min']">
+        {{minAmount?.error}}
+    </div>
+    <div class="invalid-feedback" *ngIf="amountInput?.errors['required'] && amountInput.touched">
+        {{required?.error}}
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="fixed bottom-0 left-0 px-2 py-1 w-full">
+<p-toolbar>
+    <div class="p-toolbar-group-right">
+    </div>
+    <div class="p-toolbar-group-left">
+        <p-button *ngFor="let button of toolBarSettings.buttons" [hidden]="!button.visible" label="{{ button.label | translate}}"
+        [icon]="button.icon" [disabled]="button.disabled" [styleClass]="button.classStyle" class="mr-2"
+        (onClick)="btnClick($event, button.type)"></p-button>
+    </div>
+</p-toolbar>
+</div>

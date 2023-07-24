@@ -1,0 +1,32 @@
+<div class="grid mx-7 justify-content-center">
+    <h1 class="col-12 h-2rem">{{'USER.USERS' | translate}}</h1>
+    <p-fieldset legend="סינון" [toggleable]="true" class="col-10 ">
+        <div class="grid justify-content-center">
+            <div class="col-4 h-6rem p-float-label minWidth">
+                <p-multiSelect [options]="allUsers" [(ngModel)]="selectedUsers" optionLabel="name"
+                    (onChange)="onFilterChange()" styleClass="col-12 " display="chip"></p-multiSelect>
+                <label class="col-11 text-xl font-italic">{{'USER.USERNAME' | translate}}</label>
+            </div>
+            <div class="col-4 h-6rem p-float-label minWidth">
+                <p-multiSelect [options]="departments$ | async" [(ngModel)]="selectedDepartments"
+                    optionLabel="description" (onChange)="onFilterChange()" styleClass="col-12" display="chip">
+                </p-multiSelect>
+                <label class="col-11 text-xl font-italic">{{'USER.DEPARTMENT' | translate}}</label>
+            </div>
+        </div>
+
+    </p-fieldset>
+    <div class="col-10">
+        <app-table [columns]="columns" [selectionMode]="null" [dataKey]="'id'" [itemsSource]="users"
+            [isFilterable]="true" [sortField]="'name'" [sortDirection]="SortDirection.Asc" [paginator]=" false">
+        </app-table>
+    </div>
+    <app-toolbar [toolBarSettings]="toolbarSettings" (buttonClicked)="doAction($event)"></app-toolbar>
+
+</div>
+
+<ng-template #statusTemplate let-data>
+    <div class="card">
+        <i [ngClass]="data.status===recordStatus.Enabled ? 'pi pi-check':'pi pi-times'"></i>
+    </div>
+</ng-template>

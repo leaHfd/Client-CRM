@@ -1,0 +1,85 @@
+<p-table #dt [value]="itemsSource | filter:searchDefinitions:searchTerm" [columns]="columns"
+    [(selection)]="selectedItems" [paginator]="paginator" [rows]="pageSize" [responsive]="true"
+    [rowsPerPageOptions]="[5,10,15,20,25,50,100]" [resizableColumns]="true" columnResizeMode="expand"
+    [selectionMode]="selectionMode" [lazy]="isLoadLazy" [totalRecords]="totalRecords" [rowExpandMode]="rowExpandMode"
+    (onRowExpand)="onRowExpandEvent($event)" (onRowCollapse)="onRowCollapseEvent($event)"
+    (onLazyLoad)="loadGridLazy($event)" [loading]="loading" [filters]="filters" [scrollable]="scrollable"
+    [scrollHeight]="scrollHeight" [dataKey]="dataKey" [globalFilterFields]="globalFilterFields" [sortField]="sortField"
+    [sortOrder]="sortDirection" (onRowSelect)="onRowSelecetEvent($event)">
+    <ng-template pTemplate="caption" *ngIf="showCaption">
+        <div class=" grid w-full h-1rem m-0">
+            <p class="col-6 m-0 p-0">{{title}}</p>
+            <p class="col-6 m-0 text-left p-0">{{'TABLE.TOTAL' |translate }} : {{totalRecords}}</p>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngIf="rowExpand" style="width: 60px;" [ngClass]="columnClass()"></th>
+            <th [hidden]="hideSelectorsColumn" style="width: 2.25em" [ngClass]="columnClass()">
+                <p-tableHeaderCheckbox *ngIf="!hideHeaderCheckBox"></p-tableHeaderCheckbox>
+            </th>
+            <th *ngFor="let col of columns" [hidden]="col.hideColumn?col.hideColumn():false"
+                [pSortableColumn]="col.sortable ? col.field : '' " [ngClass]="columnClass(col.width, col.headerClass)">
+                {{col.header}}
+                <p-sortIcon *ngIf="col.sortable" [field]="col.field"></p-sortIcon>
+            </th>
+
+        </tr>
+        <!-- <tr *ngIf="isFilterable">
+            <th [hidden]="hideSelectorsColumn"></th>
+            <th *ngFor="let col of columns" [hidden]="col.hidden">
+                <button *ngIf="col.filter" pButton type="button" icon="ui-icon-search" class="icon-square"
+                    disabled="disabled"></button>
+                <input *ngIf="col.filter && !col.type" pInputText type="text"
+                    (input)="dt.filter($event.target, col.field, col.filterMatchMode)">
+                <p-dropdown *ngIf="col.type==ColumnType.Enum" [options]="col.comboOptionsFilter"
+                    [showClear]="true" placeholder="{{'GENERAL.SELECT'|translate}}"
+                    (onChange)="filter(dt,$event.value,col.field,col.filterMatchMode)" styleClass="ui-column-filter">
+                </p-dropdown>
+            </th>
+        </tr> -->
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-rowIndex="rowIndex" let-columns="columns" let-expanded="expanded">
+        <tr [pSelectableRow]="rowData" (click)="isClickableRow && onClickRow(rowData[dataKey])"
+            [ngClass]="rowData[fieldForRowClass] === valueForRowClass ? 'row-specific-class':'' ">
+            <td [hidden]="hideSelectorsColumn" style="width: 2.25em">
+                <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+            </td>
+            <td *ngIf="rowExpand">
+                <button type="button" pButton pRipple [pRowToggler]="rowData"
+                    class="p-button-text p-button-rounded p-button-plain"
+                    [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-left'"></button>
+            </td>
+            <td *ngFor="let col of columns" [hidden]="col.hideColumn?col.hideColumn():false"
+                class="ui-resizable-column {{col.field}}" tooltipPosition="left" [pTooltip]="col.tooltip"
+                [ngClass]="col.cellClassRules?buildCellClass(col.cellClassRules,rowData[col.field],rowData):''">
+                <ng-container [ngSwitch]="col.type">
+                    <span *ngSwitchCase="ColumnType.Enum">
+                        {{rowData[col.field] | enumPipe:col.customColumnParams.enumType: col.customColumnParams.enumName
+                        |async}}
+                    </span>
+                    <span *ngSwitchCase="ColumnType.Date">
+                        {{rowData[col.field] | date:'dd.MM.yyyy'}}
+                    </span>
+
+                    <div *ngSwitchCase="ColumnType.Template" style="direction: ltr !important;">
+                        <ng-container *ngTemplateOutlet="col.customColumnParams.template;context:{$implicit: rowData}">
+                        </ng-container>
+                    </div>
+                    <span *ngSwitchDefault>
+                        <p> {{getDefaultField(rowData, col.field, col.combinedFieldsNames)}}</p>
+                    </span>
+                </ng-container>
+            </td>
+
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns">
+        <tr class="row-expand">
+            <td [attr.colspan]="columns.length +1">
+                <ng-container *ngTemplateOutlet="rowExpandTemplate;context:{$implicit: rowData}"></ng-container>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>

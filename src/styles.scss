@@ -1,0 +1,439 @@
+/* You can add global styles to this file, and also import other style files */
+// @import '../node_modules/primeflex/primeflex.css';
+
+body {
+    direction: rtl;
+    overflow: hidden;
+
+    .toastMessage.forceActionsText {
+        white-space: pre-line !important;
+    }
+
+    // primeng rtl
+    .ui-rtl {
+
+
+        .p-autocomplete-dd .p-autocomplete-dropdown {
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .p-autocomplete-dd .p-autocomplete-input,
+        .p-autocomplete-dd .p-autocomplete-multiple-container {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+
+        }
+
+        .ng-trigger.ng-trigger-overlayAnimation.p-autocomplete-panel {
+            left: 0px !important;
+        }
+
+        .p-toolbar {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .p-button .p-button-icon-left {
+            margin-left: 0.5rem;
+        }
+
+        .p-dropdown-panel .p-dropdown-header .p-dropdown-filter {
+            padding-right: 0rem;
+            margin-right: 0rem;
+            padding-left: 1.75rem;
+            margin-left: -1.75rem;
+        }
+
+        .p-dropdown-panel .p-dropdown-header .p-dropdown-filter-icon {
+            left: 0.75rem;
+            right: auto;
+        }
+
+        .p-dropdown .p-dropdown-clear-icon {
+            left: 3rem;
+            right: auto;
+        }
+
+        .field-checkbox>label,
+        .field-radiobutton>label {
+            margin-right: 0.5rem;
+        }
+
+        .p-inline-message .p-inline-message-icon {
+            margin-left: 0.5rem;
+            margin-right: 0;
+        }
+
+        .p-checkbox-label {
+            margin-left: 0rem;
+            margin-right: 0.5rem;
+        }
+
+        .p-dialog .p-dialog-footer {
+            text-align: end;
+        }
+
+        .p-progress-spinner {
+            top: calc(50% - (100px / 2));
+            right: calc(50% - (100px / 2));
+            position: fixed;
+        }
+
+        .p-datatable .p-datatable-tbody>tr>td {
+            text-align: right;
+        }
+
+        .p-datatable .p-datatable-thead>tr>th {
+            text-align: right;
+        }
+
+        .p-buttonset .p-button:first-of-type {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+        }
+
+        .p-buttonset .p-button:not(:last-child) {
+            border-left: 0 none;
+            border-right: 1px solid #ced4da;
+        }
+
+        .p-buttonset .p-button:last-of-type {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+        }
+
+        .p-fieldset.p-fieldset-toggleable .p-fieldset-legend a .p-fieldset-toggler {
+            margin-right: 0rem;
+            margin-left: 0.5rem;
+        }
+    }
+
+    .p-blockui-document.p-component-overlay {
+        z-index: 10009;
+    }
+
+    .create-business,
+    .business-data,
+    .fee-tem-modal,
+    .withdrawer-data {
+        .p-card .p-card-content {
+            padding: 0.75rem 0;
+        }
+
+        .p-card .p-card-body {
+            padding: 0.75rem;
+            padding-bottom: 0;
+        }
+
+        .record-status .p-dropdown .p-dropdown-label {
+            padding: 0rem 0.75rem;
+            padding-top: 0.25rem;
+        }
+
+        .p-inputtext {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .p-panel-header {
+            padding: 0.75rem
+        }
+
+        .p-panel-content {
+            height: 60rem;
+        }
+
+        span.p-dropdown-label {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .sum input.p-inputtext {
+            width: inherit;
+        }
+    }
+
+    .create-business {
+        .p-card .p-card-content {
+            padding-top: 0;
+        }
+    }
+
+    .hide-panel-header {
+        .p-panel-header {
+            display: none;
+        }
+
+        .p-panel .p-panel-content {
+            border-top: 1px solid #dee2e6;
+            border-top-right-radius: 6px;
+            border-top-left-radius: 6px;
+        }
+    }
+
+    .business-data,
+    .withdrawer-data {
+        .financial-data {
+            .p-inputtext {
+                width: 6rem;
+            }
+
+            .l-input .p-inputtext {
+                width: 8rem;
+            }
+        }
+
+        .p-panel-content {
+            height: 57.5rem;
+        }
+
+        .p-card .p-card-title {
+            padding-right: 50px;
+        }
+
+
+    }
+
+    .fee-tem-modal {
+        .p-panel-content {
+            height: 34rem !important;
+            overflow: auto;
+        }
+    }
+
+    .license-mode {
+        .p-tabview-nav-link {
+            padding: 0.25rem !important;
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
+        }
+
+        .p-tabview-panels {
+            display: none;
+        }
+
+        .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+            border-width: 1px;
+        }
+    }
+
+    .withdrawer-data {
+        .p-panel-content {
+            height: 47.5rem;
+        }
+
+    }
+
+
+    .actions-slide {
+        display: block;
+        position: fixed;
+        width: 52px;
+        height: 52px;
+        top: 66px;
+        right: -1px;
+        z-index: 1;
+        box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%), 0 8px 10px 1px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%);
+        border-radius: 6px;
+        border-bottom-right-radius: 0px;
+        border-top-right-radius: 0px;
+
+        button.p-ripple.p-element.p-button.p-component.p-button-icon-only {
+            display: block;
+            position: absolute;
+            width: 52px;
+            height: 52px;
+            padding: 0px;
+            z-index: 1;
+            border-bottom-right-radius: 0px;
+            border-top-right-radius: 0px;
+
+            span.pi.pi-th-large.p-button-icon.ng-star-inserted {
+                font-size: 22px;
+                padding-right: 5px;
+            }
+        }
+    }
+
+    .phone-transaction {
+        .p-inputnumber .p-inputnumber-input {
+            width: 1%;
+        }
+    }
+
+    .airport {
+        .createdAt {
+            direction: ltr;
+        }
+
+        .p-button .p-button-icon-left {
+            margin: 0;
+        }
+
+        .p-card .p-card-title {
+            padding-right: 50px;
+        }
+
+    }
+
+    .transaction-details {
+
+        span.p-dropdown-label,
+        .p-inputtext {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .card-border {
+            border: 1px solid lightgray;
+            border-radius: 6px;
+
+        }
+
+        .p-card .p-card-body {
+            padding-bottom: 0;
+        }
+    }
+
+
+
+    .airport {
+        .p-card .p-card-body {
+            padding-bottom: 0;
+        }
+
+        .p-datatable .p-datatable-tbody>tr>td {
+            padding: 0.5rem 1rem;
+
+        }
+
+
+
+        .transaction-details {
+            .p-card .p-card-content {
+                padding-bottom: 1rem;
+            }
+
+            .p-toolbar {
+                padding-top: 0;
+                padding-bottom: 0;
+                margin-left: -20px;
+                margin-right: -20px;
+            }
+
+        }
+    }
+
+    .status-reason {
+        .p-button {
+            width: 11rem;
+            height: 4rem;
+        }
+    }
+
+    .p-datatable-scrollable-table>.p-datatable-thead {
+        z-index: inherit;
+    }
+
+    .checks-viewer {
+        .p-scrollpanel.p-component {
+            width: 100%;
+        }
+
+        #editorModeButtons {
+            display: none;
+        }
+
+        #toolbarViewerMiddle {
+            left: 35%
+        }
+    }
+
+    .return-certificate-upload {
+        .p-fileupload .p-fileupload-content {
+            height: calc(100vh - 300px);
+            overflow-y: auto;
+        }
+    }
+
+    .search-return-certificate {
+        thead.p-datatable-thead {
+            z-index: 2 !important;
+        }
+    }
+
+    .return-certificate-search {
+        .p-sidebar-content {
+            height: 100%;
+        }
+
+        .p-panel-content {
+            height: 100%;
+        }
+    }
+
+    .hide-header {
+        .p-fieldset .p-fieldset-legend {
+            display: none;
+        }
+    }
+
+    .return-certificate-data {
+        .p-card .p-card-body {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .p-card-content {
+            padding: 0;
+        }
+
+        .p-card .p-card-title {
+            margin-bottom: 0;
+            padding-right: 2.25rem;
+            padding-top: 0.5rem;
+        }
+
+        .formgroup-inline .field {
+            margin-bottom: 0;
+        }
+
+        fieldset {
+            padding: 0;
+        }
+
+        .form {
+            margin: 0;
+        }
+
+        .p-fieldset .p-fieldset-content {
+            padding-bottom: 0;
+        }
+
+
+
+        .details {
+            .p-card-content {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                margin-bottom: 1rem;
+
+                .field.grid,
+                .formgrid.grid {
+                    margin-bottom: 0;
+                }
+            }
+
+
+        }
+    }
+}

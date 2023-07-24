@@ -1,0 +1,126 @@
+{
+  "GENERAL": {
+    "SHOW": "הצג",
+    "ERROR": "אופס...",
+    "APPROVAL": "הצלחנו!",
+    "MESSAGE": "הודעה",
+    "SAVE": "שמור",
+    "DELETE": "מחק",
+    "SEARCH": "בצע חיפוש",
+    "FILTER": "סנן",
+    "CLEAR": "נקה שדות",
+    "OK": "אישור",
+    "CANCEL": "ביטול",
+    "CONTINUE": "המשך",
+    "TOTAL": "סך הכל",
+    "YES": "כן",
+    "NO": "לא",
+    "SELECT": "בחר",
+    "TODAY": "תאריך נוכחי",
+    "FIELD": "שדה",
+    "UPLOAD": "העלאה",
+    "UPLOADED_FILES": "קבצים שעלו בהצלחה",
+    "FAILED_FILES": "קבצים שנכשלו",
+    "SELECT_X_FILES": "נבחרו {{filesCount}} קבצים",
+    "DOWNLOAD": "הורדה",
+    "MESSAGES": {
+      "NOT_DEVELOPED_YET": "לא פותח עדין",
+      "SAVED_SUCCESSFULLY": "נתונים נשמרו בהצלחה"
+    },
+    "STATUS_UPDATE_AT": "תאריך שינוי סטטוס",
+    "STATUS_UPDATE_BY": "סטטוס השתנה ע\"י",
+    "CREATED_AT": "נוצר בתאריך",
+    "CREATED_BY": "נוצר ע\"י",
+    "UPDATED_AT": "נערך בתאריך",
+    "UPDATED_BY": "נערך ע\"י"
+  },
+  "ERRORS": {
+    "UNKNOWN_ERROR": ".בעיה לא צפויה, אנא נסה שוב מאוחר יותר או פנה לתמיכה",
+    "NOT_FOUND": "הנתון המבוקש לא נמצא",
+    "CANNOT_SAVE_INVALID_FORM": "לא ניתן לבצע שמירה, ישנם שדות שגויים.",
+    "REQUIRED": "שדה חובה",
+    "EMAIL": "כתובת דוא\"ל לא תקינה",
+    "MIN": "יש להזין ערך גדול או שווה ל",
+    "MAX": "יש להזין ערך קטן מ",
+    "FUTURE_DATE": "יש להזין תאריך עתידי",
+    "INVALID": "לא תקין",
+    "INVALID_PHONE": "טלפון לא תקין",
+    "BIGGER_THAN": "יש להזין ערך גדול מ",
+    "EQUAL": "יש להזין ערך שווה ל",
+    "NO_CHANGES_TO_SAVE": "אין שינויים לשמירה",
+    "ID": "מספר ת\"ז לא תקין",
+    "DUPLICATE_USERNAME": "שם משתמש כבר קיים במערכת",
+    "DUPLICATE_PRIVATID": "מספר זהות זה קיים כבר במערכת (לא כעובד)",
+    "DUPLICATE_USER_EMAIL": "קיים במערכת עובד בעל כתובת מייל זהה",
+    "DUPLICATE_USER_PRIVATID": "קיים במערכת עובד בעל מספר זהות זהה",
+    "DUPLICATE_EMAIL": "מייל זה קיים כבר במערכת (לא כעובד)",
+    "FILL_MIN_ONE_FIELD": "יש להזין ערך לפחות בשדה אחד",
+    "FILL_ARRANGEMENT_DETAILS": "יש למלא פרטי הסדר"
+  },
+  "FORMS": {
+    "CANDEACTIVATE_MESSAGE": "ישנם שינויים שלא נשמרו, האם ברצונך לצאת מהמסך?"
+  },
+  "TOP_MENU": {
+    "BUSINESS": {
+      "BUSINESS": "בתי עסק",
+      "CREATE_BUSINESS": "הקמת בית עסק",
+      "EXISTING_BUSINESS": "בית עסק קיים",
+      "ADD_BRANCH": "הוספת סניף"
+    },
+    "USERS": {
+      "USERS": "עובדים",
+      "USERS_MANAGMENT": "ניהול עובדים",
+      "PERMISSIONS_MANAGEMENT": "ניהול הרשאות"
+    }
+  },
+  "TOOLBAR": {
+    "SAVE": "שמירה",
+    "CANCEL": "יציאה ללא שמירה",
+    "CLEAR": "ניקוי שדות",
+    "NEW": "חדש",
+    "CLOSE": "סגור"
+  },
+  "ENUMS": {
+    "Validators": {
+      "OnlyNumbers": "נא הזן רק מספרים",
+      "OnlyLetters": "נא הזן רק אותיות",
+      "PhoneNumber": "נא הזן מספר טלפון תקין",
+      "ValidPass": "אותיות באנגלית וספרות בלבד לפחות 8 תווים"
+    },
+    "LoginStatus": {
+      "InvalidLogin": "שם משתמש או סיסמא שגויים",
+      "GeneralError": "שגיאה"
+    }
+  },
+  "LOGIN": {
+    "USER_NAME": "שם משתמש",
+    "PASSWORD": "סיסמא",
+    "SUBMIT": "כניסה למערכת"
+  },
+  "TABLE": {
+    "TOTAL": "סך הכל רשומות"
+  },
+  "USER": {
+    "NAME": "שם",
+    "DEPARTMENTS": "מחלקות",
+    "STATUS": "סטטוס",
+    "USERS": "עובדים",
+    "USER_DETAILS": "פרטי עובד",
+    "CREATE_USER": "הקמת עובד",
+    "USERNAME": "שם עובד",
+    "DEPARTMENT": "מחלקה",
+    "DETAILS": "פרטי עובד",
+    "FIRSTNAME": "שם פרטי",
+    "LASTNAME": "שם משפחה",
+    "EMAIL": "מייל",
+    "PHONE": "טלפון",
+    "IDENTITY": "תעודת זהות",
+    "ACTIVE": "פעיל",
+    "INACTIVE": "לא פעיל",
+    "USER_NAME": "שם משתמש",
+    "PASSWORD": "סיסמת משתמש",
+    "ROLE": "פרופיל הרשאות",
+    "CREATE_AT": "נוצר בתאריך",
+    "CREATE_BY": "עודכן בתאריך"
+  }
+}
